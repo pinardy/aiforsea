@@ -1,5 +1,5 @@
 .gitattributes
 
 # Data
-safety
+safety/features/*
 
