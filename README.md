@@ -9,6 +9,8 @@
 
 ### Problem Statement
 
+https://www.aiforsea.com/safety
+
 Given the telematics data for each trip and the label if the trip is tagged as dangerous driving, derive a model that can detect dangerous driving trips.
 
 ### Code
@@ -54,7 +56,6 @@ One of the most important experimentation is with feature engineering. Hence, I 
 1. Using only average
 2. Using average, min, max, std, 30th & 70th percentile
 3. Performed feature selection with dataframe from (2)
-4. Remove noise on the raw dataset through rolling mean
 
 The AUC observed is as follows:
 
