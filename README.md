@@ -1,11 +1,28 @@
-# AIforsea Challenge (Category: **Safety**)
+# AIforSEA Challenge
+
+<a href="https://www.aiforsea.com/"><h2 align="center">AI for S.E.A.</h2></a>
+
+<p align="center">
+  Based on telematics data, how might we detect if the driver is driving dangerously?   
+  <br>
+  <strong>Category: </strong> Safety
+  <br><br>
+  <a href="https://www.aiforsea.com/traffic-management">
+    <img alt="Traffic Management" src="https://static.wixstatic.com/media/397bed_1b867ef7b8e84c3f841bc8f7aa9ea9b6~mv2.png/v1/fill/w_279,h_279,al_c,q_80,usm_0.66_1.00_0.01/Grab%20EDM_Traffic%20Management.webp">
+  </a>
+</p>
+
+---
 
 ### Table of Contents
 
-1. Problem Statement
-2. Code
-3. Instructions
-4. Experiments
+- [Problem Statement](#Problem-Statement)
+- [Instructions](#Instructions)
+- [Data Preprocessing](#Data-Preprocessing)
+- [Feature Selection](#Feature-Selection)
+- [Models](#Models)
+
+---
 
 ### Problem Statement
 
@@ -13,13 +30,7 @@ https://www.aiforsea.com/safety
 
 Given the telematics data for each trip and the label if the trip is tagged as dangerous driving, derive a model that can detect dangerous driving trips.
 
-### Code
-
-Notebooks for each of the following can be accessed by clicking on the links below.
-
-1. Data Preprocessing
-2. Feature Selection
-3. Models (Random Forest)
+---
 
 ### Instructions
 
@@ -49,18 +60,41 @@ Creating the model and evaluation:
 
 3. Run all of the cells in **safety-model.ipynb**
 
-### Experiments
+---
 
-One of the most important experimentation is with feature engineering. Hence, I evaluated how the model would perform with different sets of data with different features
+### Data Preprocessing
 
-1. Using only average
-2. Using average, min, max, std, 30th & 70th percentile
-3. Performed feature selection with dataframe from (2)
+The notebook for data preprocessing can be found [here](https://github.com/pinardy/aiforsea/blob/master/safety-data-preprocessing.ipynb).
 
-The AUC observed is as follows:
+For each trip (or bookingID), we obtain the the following for each feature
 
-| Experiment |      AUC       |
-| ---------- | :------------: |
-| (1)        | 0.695536967717 |
-| (2)        | 0.710761690154 |
-| (3)        | 0.71311674188  |
+- average
+- standard deviation
+- maximum
+- minimum
+- 10th, 30th, 70th, 90th percentile
+- length of trip (average speed \* time)
+
+---
+
+### Feature Selection
+
+The notebook for feature selection can be found [here](https://github.com/pinardy/aiforsea/blob/master/safety-feature-selection.ipynb)
+
+**Extra Tree Classifier** is used for extracting the top 10 features from our preprocessed dataset. Explanation for the chosen features can be found in the notebook.
+
+---
+
+### Models
+
+The notebook for the models can be found [here](https://github.com/pinardy/aiforsea/blob/master/safety-models.ipynb).
+
+Model Comparison:
+| Model | Accuracy | AUC |
+|------------------------|------------|-------|
+| Random Forest | 0.777 | 0.588 |
+| Logistic Regression | 0.753 | 0.500 |
+| Support Vector Machine | 0.752 | 0.499 |
+| Neural Network | 0.745 | 0.532 |
+
+From the above comparison, **Random Forest** is the best performing model.
