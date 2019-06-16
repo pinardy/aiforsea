@@ -8,7 +8,7 @@
   <strong>Category: </strong> Safety
   <br><br>
   <a href="https://www.aiforsea.com/traffic-management">
-    <img alt="Traffic Management" src="https://static.wixstatic.com/media/397bed_1b867ef7b8e84c3f841bc8f7aa9ea9b6~mv2.png/v1/fill/w_279,h_279,al_c,q_80,usm_0.66_1.00_0.01/Grab%20EDM_Traffic%20Management.webp">
+    <img alt="Traffic Management" height="50%" width="50%" src="https://static.wixstatic.com/media/397bed_1b867ef7b8e84c3f841bc8f7aa9ea9b6~mv2.png/v1/fill/w_279,h_279,al_c,q_80,usm_0.66_1.00_0.01/Grab%20EDM_Traffic%20Management.webp">
   </a>
 </p>
 
@@ -21,6 +21,7 @@
 - [Data Preprocessing](#Data-Preprocessing)
 - [Feature Selection](#Feature-Selection)
 - [Models](#Models)
+- [References](#References)
 
 ---
 
@@ -47,7 +48,7 @@ aiforsea
      |__labels (folder)
   |__safety-data-preprocessing.ipynb
   |__safety-feature-selection.ipynb
-  |__safety-model.ipynb
+  |__safety-models.ipynb
   |__safety_preprocessing.py
 ```
 
@@ -90,11 +91,23 @@ The notebook for feature selection can be found [here](https://github.com/pinard
 The notebook for the models can be found [here](https://github.com/pinardy/aiforsea/blob/master/safety-models.ipynb).
 
 Model Comparison:
-| Model                  | Accuracy | AUC   |
-|------------------------|----------|-------|
-| Random Forest          | 0.777    | 0.588 |
-| Logistic Regression    | 0.753    | 0.500 |
-| Support Vector Machine | 0.752    | 0.499 |
-| Neural Network         | 0.745    | 0.532 |
+| Model | Accuracy | AUC |
+| --- | --- | --- |
+| Random Forest | **0.777** | **0.588** |
+| Logistic Regression | 0.753 | 0.500 |
+| Support Vector Machine | 0.752 | 0.499 |
+| Neural Network | 0.745 | 0.532 |
 
 From the above comparison, **Random Forest** is the best performing model.
+
+---
+
+### References
+
+- [Fine-grained Abnormal Driving Behaviors
+  Detection and Identification with Smartphones
+  ](http://www.cs.sjtu.edu.cn/~jdyu/papers/2017_TMC_D3.pdf)
+- [A Smartphone-based Sensing Platform to Model
+  Aggressive Driving Behaviors
+  ](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.857.8337&rep=rep1&type=pdf)
+- [Predictive Modeling Using Telematics](http://www.reserveprism.com/docs/PredictiveModelingUsingTelematics.pdf)
