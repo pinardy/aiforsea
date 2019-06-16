@@ -91,12 +91,13 @@ The notebook for feature selection can be found [here](https://github.com/pinard
 The notebook for the models can be found [here](https://github.com/pinardy/aiforsea/blob/master/safety-models.ipynb).
 
 Model Comparison:
-| Model | Accuracy | AUC |
-| --- | --- | --- |
-| Random Forest | **0.777** | **0.588** |
-| Logistic Regression | 0.753 | 0.500 |
-| Support Vector Machine | 0.752 | 0.499 |
-| Neural Network | 0.745 | 0.532 |
+
+| Model                  | Accuracy  | AUC       |
+| ---------------------- | --------- | --------- |
+| Random Forest          | **0.777** | **0.588** |
+| Logistic Regression    | 0.753     | 0.500     |
+| Support Vector Machine | 0.752     | 0.499     |
+| Neural Network         | 0.745     | 0.532     |
 
 From the above comparison, **Random Forest** is the best performing model.
 
